@@ -22,8 +22,8 @@ const UPGRADES = {
                 name: `Grass Value`,
                 desc: `Increases grass value by <b class="green">+100%</b> per level.<br>This effect is <b class="green">doubled</b> every <b class="yellow">25</b> levels.`,
 
-                cost: a => a.scale(1000-1,2,"P").simpleCost("EA", 10, 1, 1.15).ceil(),
-                bulk: a => a.simpleCost("EAI", 10, 1, 1.15).scale(1000-1,2,"P",true).add(1).floor(),
+                cost: a => a.scale(1000-1,2,"P").simpleCost("EA", 10, 1, 1.07).ceil(),
+                bulk: a => a.simpleCost("EAI", 10, 1, 1.07).scale(1000-1,2,"P",true).add(1).floor(),
                 res: "grass",
 
                 effect(a) {
@@ -40,8 +40,8 @@ const UPGRADES = {
                 name: `More Grass`,
                 desc: `Increases grass cap by <b class="green">+1</b> per level.`,
 
-                cost: a => a.scale(500-1,2,"P").simpleCost("EA", 25, 1, 1.15).ceil(),
-                bulk: a => a.simpleCost("EAI", 25, 1, 1.15).scale(500-1,2,"P",true).add(1).floor(),
+                cost: a => a.scale(500-1,2,"P").simpleCost("EA", 25, 1, 1.05).ceil(),
+                bulk: a => a.simpleCost("EAI", 25, 1, 1.05).scale(500-1,2,"P",true).add(1).floor(),
                 res: "grass",
 
                 effect(a) {
@@ -58,8 +58,8 @@ const UPGRADES = {
                 name: `Grow Speed`,
                 desc: `Increases grass grow speed by <b class="green">+10%</b> per level.`,
 
-                cost: a => a.scale(250-1,2,"P").simpleCost("EA", 100, 1, 1.35).ceil(),
-                bulk: a => a.simpleCost("EAI", 100, 1, 1.35).scale(250-1,2,"P",true).add(1).floor(),
+                cost: a => a.scale(250-1,2,"P").simpleCost("EA", 100, 1, 1.1).ceil(),
+                bulk: a => a.simpleCost("EAI", 100, 1, 1.1).scale(250-1,2,"P",true).add(1).floor(),
                 res: "grass",
 
                 effect(a) {
@@ -94,8 +94,8 @@ const UPGRADES = {
                 name: `PP`,
                 desc: `Increases prestige points gained by <b class="green">+10%</b> per level.<br>This effect is increased by <b class="green">+25%</b> every <b class="yellow">25</b> levels.`,
 
-                cost: a => a.scale(500-1,2,"P").simpleCost("EA", 1e10, 1, 1.4).ceil(),
-                bulk: a => a.simpleCost("EAI", 1e10, 1, 1.4).scale(500-1,2,"P",true).add(1).floor(),
+                cost: a => a.scale(500-1,2,"P").simpleCost("EA", 1e10, 1, 1.15).ceil(),
+                bulk: a => a.simpleCost("EAI", 1e10, 1, 1.15).scale(500-1,2,"P",true).add(1).floor(),
                 res: "grass",
 
                 effect(a) {
@@ -129,7 +129,7 @@ const UPGRADES = {
                 desc: `Increases grass value by <b class="green">+100%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>1,
+                cost: ()=>0.1,
                 res: "perks",
 
                 effect(a) {
@@ -147,7 +147,7 @@ const UPGRADES = {
                 desc: `Increases grass grow speed by <b class="green">+25%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>1,
+                cost: ()=>0.1,
                 res: "perks",
 
                 effect(a) {
@@ -165,7 +165,7 @@ const UPGRADES = {
                 desc: `Increases grass cap by <b class="green">+10</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>1,
+                cost: ()=>0.1,
                 res: "perks",
 
                 effect(a) {
@@ -175,6 +175,7 @@ const UPGRADES = {
                 effDesc: x => "+"+format(x,0),
             },
             "4": {
+                max: 10,
                 unl: ()=>true,
                 icons: ["Icons/MoreGrass"],
 
@@ -182,7 +183,7 @@ const UPGRADES = {
                 desc: `Increases grass grow amount by <b class="green">+1</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>10,
+                cost: ()=>0.2,
                 res: "perks",
 
                 effect(a) {
@@ -200,7 +201,7 @@ const UPGRADES = {
                 desc: `Increases experience gained by <b class="green">+10%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>1,
+                cost: ()=>0.1,
                 res: "perks",
 
                 effect(a) {
@@ -218,7 +219,7 @@ const UPGRADES = {
                 desc: `Increases tier progress gained by <b class="green">+10%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>1,
+                cost: ()=>0.1,
                 res: "perks",
 
                 effect(a) {
@@ -236,7 +237,7 @@ const UPGRADES = {
                 desc: `Increases prestige points gained by <b class="green">+10%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>2,
+                cost: ()=>0.2,
                 res: "perks",
 
                 effect(a) {
@@ -254,7 +255,7 @@ const UPGRADES = {
                 desc: `Increases crystals gained by <b class="green">+10%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>4,
+                cost: ()=>0.4,
                 res: "perks",
 
                 effect(a) {
@@ -272,7 +273,7 @@ const UPGRADES = {
                 desc: `Increases steel gained by <b class="green">+20%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>50,
+                cost: ()=>1,
                 res: "perks",
 
                 effect(a) {
@@ -290,7 +291,7 @@ const UPGRADES = {
                 desc: `Increases charge rate by <b class="green">+20%</b> per level.`,
 
                 noCostIncrease: true,
-                cost: ()=>50,
+                cost: ()=>1,
                 res: "perks",
 
                 effect(a) {
